@@ -93,13 +93,8 @@ Folder `MIT_App_Inventor` berisi dua file:
 
 ## 📸 Tangkapan Layar / Demo
 
-> Tambahkan screenshot aplikasi di sini, misalnya simpan gambar di folder `screenshots/` lalu tampilkan seperti ini:
+<img width="598" height="1280" alt="WhatsApp Image 2026-11-13 at 13 06 05" src="https://github.com/user-attachments/assets/49f915ed-c271-409b-8d49-b3b895abeb94" />
 
-<!--
-| Halaman Utama | Halaman Login SIAKAD |
-| --- | --- |
-| ![Home](screenshots/home.png) | ![Login](screenshots/login.png) |
--->
 
 ## 🧪 Menjalankan Test & Lint
 
