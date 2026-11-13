@@ -1,97 +1,121 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# 📱 Tugas WebView Fabric — Portal Kampus
 
-# Getting Started
+Aplikasi mobile sederhana berbasis **React Native** yang menampilkan website portal akademik (SIAKAD) kampus langsung di dalam aplikasi menggunakan komponen **WebView**. Proyek ini dibuat untuk tugas mata kuliah **Mobile Programming**, sekaligus untuk mencoba **New Architecture (Fabric)** milik React Native.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## 🎯 Deskripsi Proyek
 
-## Step 1: Start Metro
+Mahasiswa biasanya membuka SIAKAD lewat browser. Aplikasi ini membungkus halaman login SIAKAD ke dalam tampilan aplikasi native, sehingga akses ke portal kampus terasa seperti membuka aplikasi biasa, lengkap dengan header dan indikator loading.
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+Repository ini juga berisi versi pembanding yang dibuat dengan **MIT App Inventor**, supaya bisa dilihat perbedaan cara membuat WebView lewat kode (React Native) dan lewat block programming (App Inventor).
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+## ✨ Fitur Utama
 
-```sh
-# Using npm
-npm start
+- 🌐 Menampilkan halaman login SIAKAD (`siakad.unla.ac.id`) di dalam aplikasi menggunakan `react-native-webview`
+- 🧭 Header aplikasi dengan judul **"Portal Kampus - Fabric WebView"**
+- ⏳ Indikator loading otomatis saat halaman sedang dimuat (`startInLoadingState`)
+- ⚙️ JavaScript aktif di dalam WebView sehingga form login dan fitur portal bisa berjalan
+- 🧱 Menggunakan **New Architecture (Fabric)**, aktif lewat `newArchEnabled=true`
+- 📲 Mendukung Android dan iOS
+- 🧩 Versi App Inventor dengan tombol **HOME** dan **REFRESH** (folder `MIT_App_Inventor`)
 
-# OR using Yarn
-yarn start
+## 🛠️ Teknologi yang Digunakan
+
+| Kategori | Teknologi |
+| --- | --- |
+| Framework | React Native 0.87.1 |
+| Bahasa | TypeScript, Kotlin (Android), Swift (iOS) |
+| Library UI | React 19, `react-native-webview`, `react-native-safe-area-context` |
+| Build Tool | Metro Bundler, Gradle, CocoaPods |
+| JS Engine | Hermes |
+| Testing & Lint | Jest, ESLint, Prettier |
+| Pembanding | MIT App Inventor |
+
+## 📂 Struktur Folder
+
+```
+Mobile-Programming---TugasWebViewFabric/
+├── App.tsx               # Tampilan utama (header + WebView)
+├── index.js              # Entry point aplikasi
+├── android/              # Project native Android
+├── ios/                  # Project native iOS
+├── MIT_App_Inventor/     # Versi App Inventor (WebView.aia & WebView.apk)
+├── __tests__/            # File pengujian
+└── package.json          # Daftar dependency dan script
 ```
 
-## Step 2: Build and run your app
+## 🚀 Cara Instalasi & Menjalankan
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+### Prasyarat
 
-### Android
+- [Node.js](https://nodejs.org/) versi **22.11 atau lebih baru**
+- Android Studio (untuk Android) atau Xcode (untuk iOS)
+- Sudah menyelesaikan [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) dari dokumentasi React Native
 
-```sh
-# Using npm
+### Langkah-langkah
+
+**1. Clone repository**
+
+```bash
+git clone https://github.com/miraj994/Mobile-Programming---TugasWebViewFabric.git
+cd Mobile-Programming---TugasWebViewFabric
+```
+
+**2. Install dependency**
+
+```bash
+npm install
+```
+
+**3. Jalankan Metro (biarkan terminal ini tetap terbuka)**
+
+```bash
+npm start
+```
+
+**4. Jalankan aplikasi** (buka terminal baru)
+
+```bash
+# Android (emulator atau HP yang tersambung)
 npm run android
 
-# OR using Yarn
-yarn android
-```
-
-### iOS
-
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
-```
-
-Then, and every time you update your native dependencies, run:
-
-```sh
-bundle exec pod install
-```
-
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
+# iOS (hanya di macOS)
+bundle install            # pertama kali saja
+cd ios && bundle exec pod install && cd ..
 npm run ios
-
-# OR using Yarn
-yarn ios
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+### Mencoba Versi App Inventor
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+Folder `MIT_App_Inventor` berisi dua file:
 
-## Step 3: Modify your app
+- `WebView.apk` — bisa langsung diinstal di HP Android
+- `WebView.aia` — bisa diimpor ke [MIT App Inventor](https://appinventor.mit.edu/) lewat menu **Projects → Import project (.aia)**
 
-Now that you have successfully run the app, let's make changes!
+## 📸 Tangkapan Layar / Demo
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+> Tambahkan screenshot aplikasi di sini, misalnya simpan gambar di folder `screenshots/` lalu tampilkan seperti ini:
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+<!--
+| Halaman Utama | Halaman Login SIAKAD |
+| --- | --- |
+| ![Home](screenshots/home.png) | ![Login](screenshots/login.png) |
+-->
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+## 🧪 Menjalankan Test & Lint
 
-## Congratulations! :tada:
+```bash
+npm test      # menjalankan Jest
+npm run lint  # memeriksa gaya penulisan kode dengan ESLint
+```
 
-You've successfully run and modified your React Native App. :partying_face:
+## 👤 Pembuat
 
-### Now what?
+**Miraj Jamal Sidik**
+Mahasiswa Informatika, Universitas Langlangbuana
+Mata kuliah: Mobile Programming
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+[GitHub: @miraj994](https://github.com/miraj994)
 
-# Troubleshooting
+## 📄 Catatan
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+Proyek ini dibuat untuk keperluan pembelajaran. Halaman SIAKAD yang ditampilkan adalah milik pihak kampus, dan aplikasi ini tidak menyimpan data login pengguna.
