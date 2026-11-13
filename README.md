@@ -95,6 +95,10 @@ Folder `MIT_App_Inventor` berisi dua file:
 
 <img width="598" height="1280" alt="WhatsApp Image 2026-11-13 at 13 06 05" src="https://github.com/user-attachments/assets/49f915ed-c271-409b-8d49-b3b895abeb94" />
 
+<img width="1366" height="711" alt="WhatsApp Image 2026-11-13 at 16 17 15" src="https://github.com/user-attachments/assets/fad32440-8641-4950-bcf1-4233f62419a6" />
+
+<img width="236" height="498" alt="image" src="https://github.com/user-attachments/assets/e8c7407c-cc70-4c69-9dec-4ff619f10032" />
+
 
 ## 🧪 Menjalankan Test & Lint
 
